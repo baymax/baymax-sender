@@ -37,7 +37,7 @@ $(OBJ_DIR)session.o: $(SRC_DIR)session.cpp $(HEADER_DIR)session.h
 	$(CC) -c -o $@ $< $(CFLAGS)
 
 
-$(OBJ_DIR)main.o: $(SRC_DIR)main.cpp $(HEADER_DIR)main.h $(OBJ_DIR)init.o #$(OBJ_DIR)fan.o
+$(OBJ_DIR)main.o: $(SRC_DIR)main.cpp $(HEADER_DIR)main.h $(OBJ_DIR)init.o $(OBJ_DIR)cmdparser.o #$(OBJ_DIR)fan.o
 	$(CC) -c -o $@ $< $(CFLAGS)
 
 $(EXECUTABLE): $(OBJ_DIR)main.o
