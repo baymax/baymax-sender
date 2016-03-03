@@ -15,7 +15,7 @@ EXECUTABLE = baymax-io-sender
 
 all: $(EXECUTABLE)
 
-$(OBJ_DIR)bcm2835.o: $(SRC_DIR)bcm2835.cpp $(HEADER_DIR)bcm2835.h
+$(OBJ_DIR)bcm2835.o: $(SRC_DIR)bcm2835.c $(HEADER_DIR)bcm2835.h
 	$(CC) -c -o $@ $< $(CFLAGS)
     
 $(OBJ_DIR)cmdparser.o: $(SRC_DIR)cmdparser.cpp $(HEADER_DIR)cmdparser.h $(OBJ_DIR)gpiosender.o
