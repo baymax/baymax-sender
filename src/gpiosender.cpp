@@ -43,7 +43,6 @@ void setDownForce(unsigned char mode) {
 
 void setSuspension(unsigned char state) {
     if (state == 0) {
-        printf("abc");
         bcm2835_gpio_write(SUSPENSION_LOW_PIN, HIGH);
         bcm2835_gpio_write(SUSPENSION_HIGH_PIN, LOW);
         suspensionHighChanged(state);

@@ -9,9 +9,10 @@
 int main() {
     initBcm2835();
     int32_t c;
+    while(1) {
     scanf("%s", c);
     parseCmd(c);
-    
+    }
     closeBcm2835();
     return 0;
 }
