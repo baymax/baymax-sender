@@ -1,4 +1,5 @@
 #include <bcm2835.h>
+#include "gpioconstants.h"
 
 // Set desired fan speed 1-4
 void setFanSpeed(unsigned char speed);
