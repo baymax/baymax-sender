@@ -9,7 +9,7 @@
 int main() {
     initBcm2835();
     int32_t c;
-    scanf("%s", c);
+    scanf("%d", &c);
     parseCmd(c);
     
     closeBcm2835();
