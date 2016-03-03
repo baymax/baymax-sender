@@ -5,28 +5,28 @@
 
 void setFanSpeed(unsigned char speed) {
     if (speed == 1) {
-        bcm2835_gpio_write(FAN_SEED_1_PIN, HIGH);
-        bcm2835_gpio_write(FAN_SEED_2_PIN, LOW);
-        bcm2835_gpio_write(FAN_SEED_3_PIN, LOW);
-        bcm2835_gpio_write(FAN_SEED_4_PIN, LOW);
+        bcm2835_gpio_write(FAN_SPEED_1_PIN, HIGH);
+        bcm2835_gpio_write(FAN_SPEED_2_PIN, LOW);
+        bcm2835_gpio_write(FAN_SPEED_3_PIN, LOW);
+        bcm2835_gpio_write(FAN_SPEED_4_PIN, LOW);
         fanSpeedChanged(speed);
     } else if (speed == 2) {
-        bcm2835_gpio_write(FAN_SEED_1_PIN, LOW);
-        bcm2835_gpio_write(FAN_SEED_2_PIN, HIGH);
-        bcm2835_gpio_write(FAN_SEED_3_PIN, LOW);
-        bcm2835_gpio_write(FAN_SEED_4_PIN, LOW);
+        bcm2835_gpio_write(FAN_SPEED_1_PIN, LOW);
+        bcm2835_gpio_write(FAN_SPEED_2_PIN, HIGH);
+        bcm2835_gpio_write(FAN_SPEED_3_PIN, LOW);
+        bcm2835_gpio_write(FAN_SPEED_4_PIN, LOW);
         fanSpeedChanged(speed);
     } else if (speed == 3) {
-        bcm2835_gpio_write(FAN_SEED_1_PIN, LOW);
-        bcm2835_gpio_write(FAN_SEED_2_PIN, LOW);
-        bcm2835_gpio_write(FAN_SEED_3_PIN, HIGH);
-        bcm2835_gpio_write(FAN_SEED_4_PIN, LOW);
+        bcm2835_gpio_write(FAN_SPEED_1_PIN, LOW);
+        bcm2835_gpio_write(FAN_SPEED_2_PIN, LOW);
+        bcm2835_gpio_write(FAN_SPEED_3_PIN, HIGH);
+        bcm2835_gpio_write(FAN_SPEED_4_PIN, LOW);
         fanSpeedChanged(speed);
     } else if (speed == 4) {
-        bcm2835_gpio_write(FAN_SEED_1_PIN, LOW);
-        bcm2835_gpio_write(FAN_SEED_2_PIN, LOW);
-        bcm2835_gpio_write(FAN_SEED_3_PIN, LOW);
-        bcm2835_gpio_write(FAN_SEED_4_PIN, HIGH);
+        bcm2835_gpio_write(FAN_SPEED_1_PIN, LOW);
+        bcm2835_gpio_write(FAN_SPEED_2_PIN, LOW);
+        bcm2835_gpio_write(FAN_SPEED_3_PIN, LOW);
+        bcm2835_gpio_write(FAN_SPEED_4_PIN, HIGH);
         fanSpeedChanged(speed);
     }
 }
