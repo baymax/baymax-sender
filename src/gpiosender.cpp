@@ -1,7 +1,7 @@
 #include "gpiosender.h"
 #include "gpioconstants.h"
 #include "logger.h"
-
+#include <stdio.h>
 
 void setFanSpeed(unsigned char speed) {
     if (speed == 1) {
@@ -43,6 +43,7 @@ void setDownForce(unsigned char mode) {
 
 void setSuspension(unsigned char state) {
     if (state == 0) {
+        printf("abc");
         bcm2835_gpio_write(SUSPENSION_LOW_PIN, HIGH);
         bcm2835_gpio_write(SUSPENSION_HIGH_PIN, LOW);
         suspensionHighChanged(state);
