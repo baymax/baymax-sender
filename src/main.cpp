@@ -4,14 +4,15 @@
 #include <stdint.h>
 #include <stdio.h>
 #include "cmdparser.h"
+#include "session.h"
 
 
 int main() {
     initBcm2835();
     int32_t c;
+    setCommandPipePath("piippu");
     while(1) {
-    scanf("%d", &c);
-    parseCmd(c);
+        c = readCommandPipeline()
     }
     closeBcm2835();
     return 0;
