@@ -8,3 +8,5 @@ void setDownForce(unsigned char mode);
 void setSuspension(unsigned char state);
 // Sets sportmode 1 on 0 off
 void setSportMode(unsigned char mode);
+// Sets interior ligth 1 on 0 off
+void setInteriorLight(unsigned char mode);

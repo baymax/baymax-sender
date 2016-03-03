@@ -15,3 +15,7 @@ void sportModeStateChanged(unsigned char state) {
 void downForceStateChanged(unsigned char state) {
     
 }
+
+void interiorStateChaned(unsigned char state) {
+    
+}

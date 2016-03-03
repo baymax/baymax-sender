@@ -1,11 +1,16 @@
 #include "main.h"
 #include "gpiosender.h"
+#include "init.h"
+#include <stdint.h>
+#include "cmdparser.h"
+
 
 int main() {
-    usigned char c;
+    initBcm2835();
+    usigned int32_t c;
     scanf("%s", c);
-    if (c = 1) {
-        setSportMode(1);
-    }
+    parseCmd(c);
+    
+    closeBcm2835();
     return 0;
 }

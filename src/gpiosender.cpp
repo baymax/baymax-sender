@@ -60,7 +60,20 @@ void setSuspension(unsigned char state) {
 void setSportMode(unsigned char mode) {
     if (mode == 0) {
         bcm2835_gpio_write(SPORTMODE_ON_PIN, LOW);
+        sportModeStateChanged(mode);
     } else if (mode == 1) {
         bcm2835_gpio_write(SPORTMODE_ON_PIN, HIGH);
+        sportModeStateChanged(mode);
     }
+}
+
+void setInteriorLight(unsigned char mode) {
+    if (mode == 0) {
+        bcm2835_gpio_write(INTERIOR_LIGHT_ON_PIN, LOW);
+        interiorStateChaned(mode);
+    } else if (mode == 1) {
+        bcm2835_gpio_write(INTERIOR_LIGHT_ON_PIN, HIGH);
+        interiorStateChaned(mode);
+    }
+    
 }
