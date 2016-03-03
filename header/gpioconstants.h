@@ -1,4 +1,6 @@
 
+#include <bcm2835.h>
+
 #define SUSPENSION_HIGH_PIN
 #define SUSPENSION_LOW_PIN
 
