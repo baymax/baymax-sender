@@ -1,5 +1,5 @@
 #include "cmdparser.h"
-
+#include <stdio.h>
 
 
 void parseCmd(int32_t cmd) {
