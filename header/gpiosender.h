@@ -11,3 +11,5 @@ void setSuspension(unsigned char state);
 void setSportMode(unsigned char mode);
 // Sets interior ligth 1 on 0 off
 void setInteriorLight(unsigned char mode);
+// Sets motor regeneration 1 on 0 off
+void setRegeneration(unsigned char state);

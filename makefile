@@ -30,20 +30,21 @@ $(OBJ_DIR)init.o: $(SRC_DIR)init.cpp $(HEADER_DIR)init.h $(OBJ_DIR)bcm2835.o
 $(OBJ_DIR)logger.o: $(SRC_DIR)logger.cpp $(HEADER_DIR)logger.h
 	$(CC) -c -o $@ $< $(CFLAGS)
 
-$(OBJ_DIR)pipeparser.o: $(SRC_DIR)pipeparser.cpp $(HEADER_DIR)pipeparser.h
+$(OBJ_DIR)pipeline.o: $(SRC_DIR)pipeline.cpp $(HEADER_DIR)pipeline.h
 	$(CC) -c -o $@ $< $(CFLAGS)
 
 $(OBJ_DIR)session.o: $(SRC_DIR)session.cpp $(HEADER_DIR)session.h
 	$(CC) -c -o $@ $< $(CFLAGS)
 
 
-$(OBJ_DIR)main.o: $(SRC_DIR)main.cpp $(HEADER_DIR)main.h $(OBJ_DIR)init.o $(OBJ_DIR)cmdparser.o $(OBJ_DIR)session.o #$(OBJ_DIR)fan.o
+$(OBJ_DIR)main.o: $(SRC_DIR)main.cpp $(HEADER_DIR)main.h $(OBJ_DIR)init.o $(OBJ_DIR)cmdparser.o $(OBJ_DIR)pipeline.o #$(OBJ_DIR)fan.o
 	$(CC) -c -o $@ $< $(CFLAGS)
 
 $(EXECUTABLE): $(OBJ_DIR)main.o
 	$(CC) $(LDFLAGS) $(OBJ_FILES) -o executable/$(EXECUTABLE)
-    
 
+clean:  
+	rm $(OBJ_FILES)
 run:
 	./executable/$(EXECUTABLE)
 

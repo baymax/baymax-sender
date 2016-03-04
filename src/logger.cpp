@@ -19,3 +19,7 @@ void downForceStateChanged(unsigned char state) {
 void interiorStateChaned(unsigned char state) {
     
 }
+
+void regenStateChanged(unsigned char state) {
+    
+}

@@ -5,15 +5,13 @@
 #include <stdio.h>
 #include "cmdparser.h"
 #include "session.h"
+#include "pipeline.h"
 
 
 int main() {
-    initBcm2835();
-    int32_t c;
-    setCommandPipePath("piippu");
-    while(1) {
-        c = readCommandPipeline()
-    }
-    closeBcm2835();
+    //initBcm2835();
+    readSender();
+    
+    //closeBcm2835();
     return 0;
 }

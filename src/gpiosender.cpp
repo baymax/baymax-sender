@@ -4,7 +4,13 @@
 #include <stdio.h>
 
 void setFanSpeed(unsigned char speed) {
-    if (speed == 1) {
+    if (speed == 0) {
+        bcm2835_gpio_write(FAN_SPEED_1_PIN, LOW);
+        bcm2835_gpio_write(FAN_SPEED_2_PIN, LOW);
+        bcm2835_gpio_write(FAN_SPEED_3_PIN, LOW);
+        bcm2835_gpio_write(FAN_SPEED_4_PIN, LOW);
+        fanSpeedChanged(speed);
+    }else if (speed == 1) {
         bcm2835_gpio_write(FAN_SPEED_1_PIN, HIGH);
         bcm2835_gpio_write(FAN_SPEED_2_PIN, LOW);
         bcm2835_gpio_write(FAN_SPEED_3_PIN, LOW);
@@ -76,4 +82,14 @@ void setInteriorLight(unsigned char mode) {
         interiorStateChaned(mode);
     }
     
+}
+
+void setRegeneration(unsigned char state) {
+    if (state == 0) {
+        bcm2835_gpio_write(REGEN_ON_PIN, LOW);
+        regenStateChanged(state);
+    } else if (state == 1) {
+        bcm2835_gpio_write(REGEN_ON_PIN, HIGH);
+        regenStateChanged(state); 
+    }
 }

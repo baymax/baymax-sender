@@ -31,6 +31,6 @@ const int32_t SUSPENSION_MODE = 224;
 const int32_t INTERIOR_LIGTH = 768;
 const int32_t SPOILER_MODE = 3072;
 const int32_t SPORT_MODE = 12288;
-const int32_t REGERATION = 49152;
+const int32_t REGENERATION = 49152;
 
 #endif // COMMANDCONST_H
