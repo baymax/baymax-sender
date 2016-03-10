@@ -39,9 +39,11 @@ void setFanSpeed(unsigned char speed) {
 
 void setDownForce(unsigned char mode) {
     if (mode == 0) {
+	printf("Downforce off");
         bcm2835_gpio_write(DOWNFORCE_ON_PIN, LOW);
         downForceStateChanged(mode);
     } else if (mode == 1) {
+	printf("Downforce on");
         bcm2835_gpio_write(DOWNFORCE_ON_PIN, HIGH);
         downForceStateChanged(mode);
     }
@@ -49,17 +51,20 @@ void setDownForce(unsigned char mode) {
 
 void setSuspension(unsigned char state) {
     if (state == 0) {
-        bcm2835_gpio_write(SUSPENSION_LOW_PIN, HIGH);
+        printf("Suspension low");
+	bcm2835_gpio_write(SUSPENSION_LOW_PIN, HIGH);
         bcm2835_gpio_write(SUSPENSION_HIGH_PIN, LOW);
-        suspensionHighChanged(state);
+        //suspensionHighChanged(state);
     } else if (state == 1) {
+	printf("Suspension set to normal");
         bcm2835_gpio_write(SUSPENSION_LOW_PIN, LOW);
         bcm2835_gpio_write(SUSPENSION_HIGH_PIN, LOW);
-        suspensionHighChanged(state);
+        //suspensionHighChanged(state);
     } else if (state == 2) {
+	printf("Suspension set to high");
         bcm2835_gpio_write(SUSPENSION_LOW_PIN, LOW);
         bcm2835_gpio_write(SUSPENSION_HIGH_PIN, HIGH);
-        suspensionHighChanged(state);
+        //suspensionHighChanged(state);
     }
 }
 
