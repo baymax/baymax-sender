@@ -9,9 +9,9 @@
 
 
 int main() {
-    //initBcm2835();
+    initBcm2835();
     readSender();
     
-    //closeBcm2835();
+    closeBcm2835();
     return 0;
 }
