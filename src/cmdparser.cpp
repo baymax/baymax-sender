@@ -3,6 +3,7 @@
 
 
 void parseCmd(int32_t cmd) {
+    printf("%d", cmd);
     if ((cmd & SUSPENSION_MODE) > 0) {
         if ((cmd & SUSPENSION_MODE_NORMAL) > 0) {
             setSuspension(1);
@@ -33,7 +34,7 @@ void parseCmd(int32_t cmd) {
     } if ((cmd & SPOILER_MODE) > 0) {
         if ((cmd & SPOILER_MODE_AUTO) > 0) {
             setDownForce(1);
-        } else if ((cmd & SPORT_MODE_OFF) > 0) {
+        } else if ((cmd & SPOILER_MODE_OFF) > 0) {
             setDownForce(0);
         }
         
