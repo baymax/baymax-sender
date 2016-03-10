@@ -1,8 +1,66 @@
 #include "cmdparser.h"
 #include <stdio.h>
+#include "cmdconst.h"
+#include "pipeline.h"
+#include "gpiosender.h"
 
 
-void parseCmd(int32_t cmd) {
+void parseCmd(unsigned char cmd, unsigned char data) {
+    switch (cmd) {
+        case FAN_SPEED:
+            printf("Setting fan speed to %d", data);
+            #ifndef X86
+                setFanSpeed(data);
+            #endif
+            sendLogger(cmd, data);
+            break;
+        case SUSPENSION_MODE:
+            printf("Setting suspension mode to %d", data);
+            #ifndef X86
+                setSuspension(data);
+            #endif
+            sendLogger(cmd, data);
+            break;
+            
+        case INTERIOR_LIGTH:
+            printf("Setting interior ligth to %d", data);
+            #ifndef X86
+                setInteriorLight(data);
+            #endif
+            sendLogger(cmd, data);
+            break;
+        
+        case SPOILER_MODE:
+            printf("Setting spoiler mode to %d", data);
+            #ifndef X86
+                setDownForce(data);
+            #endif
+            sendLogger(cmd, data);
+            break;
+        
+        case SPORT_MODE:
+            printf("Setting sport mode to %d", data);
+            #ifndef X86
+                setSportMode(data);
+            #endif
+            sendLogger(cmd, data);
+            break;
+        
+        case REGENERATION:
+            printf("Setting regeneration to %d", data);
+            #ifndef X86
+                setRegeneration(data);
+            #endif
+            sendLogger(cmd, data);
+            break;
+        
+        default:
+            printf("Invalid command");
+            break;
+    }
+}
+
+/*void parseCmd(int32_t cmd) {
     printf("%d", cmd);
     if ((cmd & SUSPENSION_MODE) > 0) {
         if ((cmd & SUSPENSION_MODE_NORMAL) > 0) {
@@ -51,4 +109,4 @@ void parseCmd(int32_t cmd) {
             
         }
     }
-}
+}*/

@@ -4,7 +4,6 @@
 #include <stdint.h>
 #include <stdio.h>
 #include "cmdparser.h"
-#include "session.h"
 #include "pipeline.h"
 
 
